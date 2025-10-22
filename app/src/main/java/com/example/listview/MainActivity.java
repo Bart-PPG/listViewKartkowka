@@ -1,5 +1,7 @@
 package com.example.listview;
 
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -7,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,10 +50,20 @@ public class MainActivity extends AppCompatActivity {
             listViewLiczby.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    liczbyWylosowaneArrayList.remove(i);
-                    arrayAdapter.notifyDataSetChanged();
+                    //liczbyWylosowaneArrayList.remove(i);
+                    //arrayAdapter.notifyDataSetChanged();
+                    view.setBackgroundColor(Color.GRAY);
+                    TextView textView = (TextView) view;
+                    if(textView.getPaintFlags() != Paint.STRIKE_THRU_TEXT_FLAG){
+                        textView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+                    }
+                    else {
+                        textView.setPaintFlags(Paint.ANTI_ALIAS_FLAG);
+                    }
                 }
             });
+
+
             editText = findViewById(R.id.editTextNumber);
             button = findViewById(R.id.button);
             button.setOnClickListener(new View.OnClickListener() {
