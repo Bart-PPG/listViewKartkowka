@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">listview</string>
+    <string-array name="liczby">
+        <item>2137</item>
+        <item>420</item>
+        <item>69</item>
+        <item>67</item>
+    </string-array>
+</resources>
