@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    int liczba = Integer.parseInt(editText.getText().toString());
+                    liczbyWylosowaneArrayList.add(liczba);
+                    arrayAdapter.notifyDataSetChanged();
                 }
             });
 
